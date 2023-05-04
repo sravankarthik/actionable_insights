@@ -7,8 +7,8 @@ import Search from './components/Search';
 
 function App() {
   return (
-    <div>
-      <Nav_bar />
+    <div >
+      <Nav_bar />     
       <Search />
       <Entity details={{
         "app": 0.3,

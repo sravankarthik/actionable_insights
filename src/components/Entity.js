@@ -3,9 +3,11 @@ import { Container } from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import './Entity.css';
 
 const Entity = ({ details }) => {
     return (
+       <> 
         <Row className="mx-2">
             {Object.keys(details).map(function (key) {
                 return (<Col xs={6} md={2}>
@@ -24,6 +26,7 @@ const Entity = ({ details }) => {
                 </Col>)
             })}
         </Row>
+        </>
     );
 }
 
