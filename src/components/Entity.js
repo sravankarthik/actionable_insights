@@ -13,9 +13,9 @@ const Entity = ({ details }) => {
                         <Card.Body>
                             <Card.Title>{key}</Card.Title>
                             <Card.Text>
-                                {details[key]}
+                                {(((details[key] + 1) / 2) * 100) >> 0}
                                 <div className="progress">
-                                    <div className={(((details[key] + 1) / 2) * 100) >= 50 ? "progress-bar bg-success" : "prgress-bar bg-danger"} role="progressbar" style={{ width: ((details[key] + 1) / 2) * 100 }} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div className={(((details[key] + 1) / 2) * 100) >= 50 ? "progress-bar bg-success" : "prgress-bar bg-danger"} role="progressbar" style={{ width: (((details[key] + 1) / 2) * 100).toString() + "%" }} aria-valuenow={{ width: ((details[key] + 1) / 2) * 100 }} aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
 
                             </Card.Text>
