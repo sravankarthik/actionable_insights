@@ -4,7 +4,7 @@ import Entity from './components/Entity';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav_bar from './components/Nav-bar';
 import Search from './components/Search';
-import Issue from './components/Issue';
+import Issues from './components/Issues';
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
         "zomato": 0.1,
         "zomato gold": -0.3
       }} />
-      {/* <Issue /> */}
+      <Issues/>
     </div>
   );
 }
