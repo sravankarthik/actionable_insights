@@ -27,7 +27,7 @@ function App() {
         "zomato": 0.1,
         "zomato gold": -0.3
       }} />
-      <Issue />
+      {/* <Issue /> */}
     </div>
   );
 }
