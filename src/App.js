@@ -9,21 +9,26 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Container } from "react-bootstrap";
+import Report from './components/Report';
 
 let App = () => {
   let [status, setStatus] = useState(false);
   let [details, setDetails] = useState();
   let [items, setItems] = useState([]);
+  let [data, setData] = useState();
   let [package_, setPackage] = useState();
 
   let handlesubmit = (e) => {
     // e.preventDefault();
     // console.log(package_);
     axios.get(`http://127.0.0.1:5000/scores?app=${package_}`).then((response) => {
-      setDetails(response);
+      setDetails(response.data);
       axios.get(`http://127.0.0.1:5000/suggestions?app=${package_}`).then((response) => {
-        setItems(response);
-        setStatus(true)
+        setItems(response.data);
+        axios.get(`http://127.0.0.1:5000/report?app=${package_}`).then((response) => {
+          setData(response.data);
+        })
+        setStatus(true);
       })
     })
   }
@@ -45,6 +50,7 @@ let App = () => {
 
       {status && <Entity details={details} />}
       {status && <Issues items={items} />}
+      {status && <Report data={data} />}
     </div>
   );
 }
